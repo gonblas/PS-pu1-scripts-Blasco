@@ -1,6 +1,6 @@
 clear all; close all; clc;
 
-addpath('./+ej1_utils', './+utils');
+addpath('./ej1_utils', './utils');
 
 % Número de alumno utilizado
 num_alumno = 03282;

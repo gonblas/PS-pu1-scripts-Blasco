@@ -1,6 +1,6 @@
 clear all; close all; clc;
 
-addpath('./+ej1_utils', './+utils');
+addpath('./ej1_utils', './utils');
 
 % Señal de entrada: impulso unitario
 x = [1, zeros(1, 19)]; % Impulso unitario de longitud 20

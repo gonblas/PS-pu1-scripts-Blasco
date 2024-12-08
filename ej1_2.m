@@ -1,6 +1,6 @@
 clear all;close all; clc;
 
-addpath('./+ej1_utils', './+utils');
+addpath('./ej1_utils', './utils');
 
 % General
 s = linspace(-0.4999, 0.4999, 512);

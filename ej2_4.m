@@ -1,6 +1,6 @@
 clear all; close all; clc;
 
-addpath('./+ej2_utils', './+utils');
+addpath('./ej2_utils', './utils');
 
 x = respuesta_impulsional();
 

@@ -1,6 +1,6 @@
 clear all; close all; clc;
 
-addpath('./+ej2_utils', './+utils');
+addpath('./ej2_utils', './utils');
 
 % Generar el impulso unitario de longitud 20000 (por ejemplo)
 x = zeros(1, 20000);

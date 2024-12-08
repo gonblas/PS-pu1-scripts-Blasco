@@ -1,6 +1,6 @@
 clear all; close all; clc;
 
-addpath('./+ej1_utils', './+utils');
+addpath('./ej1_utils', './utils');
 
 ds = 0.001;            % Paso entre frecuencias
 s = -0.5:ds:0.5;       % Rango de frecuencias de -1/2 a 1/2

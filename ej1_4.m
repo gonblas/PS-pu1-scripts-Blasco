@@ -1,6 +1,6 @@
 clear all;close all; clc;
 
-addpath('./+ej1_utils', './+utils');
+addpath('./ej1_utils', './utils');
 
 % Señal de entrada: Señal del ejercicio 1
 num_alumno = 03282;
