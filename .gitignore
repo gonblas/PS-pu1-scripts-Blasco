@@ -1,0 +1,11 @@
+# Ignorar archivos PDF
+*.pdf
+
+# Ignorar carpetas y archivos temporales de sistemas comunes
+*.log
+*.tmp
+
+# Ignorar configuraciones específicas de entorno
+.DS_Store
+*.swp
+
