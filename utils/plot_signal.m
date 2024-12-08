@@ -47,7 +47,7 @@ function plot_signal(data, nrows, ncols, titles, xlabels, ylabels, plot_type, fi
     end
 
     % Guardar figura como PDF
-    if ~isempty(filename)
-        print(gcf, '-dpdf', filename, '-painters');
-    end
+    % if ~isempty(filename)
+    %     print(gcf, '-dpdf', filename, '-painters');
+    % end
 end

@@ -17,11 +17,11 @@ y = ec_canald(x);
 
 % Aplicar el sistema dado a la señal y
 N = length(y); % Longitud de la señal y
-y_salida_1 = filtro_compensador_2(y, 0.45, 0.2025, 8820, 17640); % Salida del sistema al pasar por el filtro de 2 retardos
-y_salida_2 = filtro_compensador_3(y, 0.45, 0.2025, -0.18225, 8820, 17640, 26460); % Salida del sistema al pasar
+y_salida_2 = filtro_dos_ramas(y); % Salida del sistema al pasar por el filtro de 2 retardos
+y_salida_3 = filtro_tres_ramas(y); % Salida del sistema al pasar
 
 % Graficar la señal de salida para el filtro de 2 retardos y 3 retardos
-data = struct('x', {1:length(x), 1:length(y), 1:length(y_salida_1), 1:length(y_salida_2)}, 'y', {x, y, y_salida_1, y_salida_2});
+data = struct('x', {1:length(x), 1:length(y), 1:length(y_salida_2), 1:length(y_salida_3)}, 'y', {x, y, y_salida_2, y_salida_3});
 titles = {'Señal de Entrada x[n]', 'Señal y[n] después de ec\_canald', 'Señal de Salida y[n] después del filtro con 2 retardos', ...
     'Señal de Salida y[n] después del filtro con 3 retardos'};
 xlabels = {'Muestras', 'Muestras', 'Muestras', 'Muestras'};
@@ -30,5 +30,7 @@ plot_type = {'plot', 'plot', 'plot', 'plot'};
 filename = 'entrada_salida_sistema.pdf';
 colors = {'r', 'b', 'g', 'm'};  % Rojo para entrada, azul para y, verde para salida
 plot_signal(data, 4, 1, titles, xlabels, ylabels, plot_type, filename, colors);
+
+sound(y_salida_3, fs);
 
 pause;
