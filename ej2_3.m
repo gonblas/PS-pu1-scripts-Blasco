@@ -1,5 +1,7 @@
 clear all; close all; clc;
 
+addpath('./+ej2_utils', './+utils');
+
 % Número de alumno
 num_alumno = 03282;
 
@@ -21,8 +23,8 @@ plot_type = {'plot', 'plot'};
 filename = 'entrada_vs_salida.pdf';
 colors = {'r', 'b'};  % Rojo para entrada, azul para salida
 
-% Graficar las señales de entrada y salida en una sola figura utilizando utils.plot_signal
-utils.plot_signal(data, 2, 1, titles, xlabels, ylabels, plot_type, filename, colors);
+% Graficar las señales de entrada y salida en una sola figura utilizando plot_signal
+plot_signal(data, 2, 1, titles, xlabels, ylabels, plot_type, filename, colors);
 
 % Reproducir la señal de salida
 sound(y, fs);

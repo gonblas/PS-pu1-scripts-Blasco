@@ -1,5 +1,7 @@
 clear all; close all; clc;
 
+addpath('./+ej2_utils', './+utils');
+
 % Número de alumno
 num_alumno = 03282;
 
@@ -23,5 +25,5 @@ plot_type = {'stem'};
 colors = {'b'}; % Azul
 filename = 'senial-ej2.pdf';
 
-% Utilizar la función utils.plot_signal para graficar
-utils.plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, colors);
+% Utilizar la función plot_signal para graficar
+plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, colors);

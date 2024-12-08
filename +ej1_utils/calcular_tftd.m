@@ -1,7 +1,6 @@
 % Función para calcular la TFTD de la señal
 function [s, X] = calcular_tftd(n, x)
-    ds = 0.001;
-    s = -0.5:ds:0.5; % Rango de frecuencias normalizadas de interés
+    s = linspace(-0.4999, 0.4999, 512);
     X = zeros(size(s));
 
     for k = 1:length(s)

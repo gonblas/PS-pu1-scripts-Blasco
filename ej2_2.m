@@ -1,5 +1,7 @@
 clear all; close all; clc;
 
+addpath('./+ej2_utils', './+utils');
+
 % Generar el impulso unitario de longitud 20000 (por ejemplo)
 x = zeros(1, 20000);
 x(1) = 1;  % Impulso unitario en n = 0
@@ -16,6 +18,6 @@ plot_type = {'stem'};
 filename = 'respuesta_impulsional.pdf';
 colors = {'b'}; % Color azul
 
-% Graficar utilizando utils.plot_signal
-utils.plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, colors);
+% Graficar utilizando plot_signal
+plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, colors);
 

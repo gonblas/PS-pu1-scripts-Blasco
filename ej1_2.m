@@ -1,5 +1,7 @@
 clear all;close all; clc;
 
+addpath('./+ej1_utils', './+utils');
+
 % General
 s = linspace(-0.4999, 0.4999, 512);
 N = 10; delta = @(N, n0) [zeros(1, n0) 1 zeros(1, N-n0)];
@@ -17,7 +19,7 @@ ylabels_mod = {'|H(e^{j 2\pi s})|'};
 plot_type_mod = {'stem'};
 colors_mod = {'b'}; % Colores para cada señal
 filename_mod = 'rta_imp_s1.pdf';
-utils.plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
+plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
 
 %% Respuesta en frecuencia
 H_S1 = 0.5 * (1 + exp(-j * 2 * pi * s)); % Fórmula para H(e^{j2\pi s})
@@ -30,7 +32,7 @@ ylabels_mod = {'|H(e^{j 2\pi s})|', '|H(e^{j 2\pi s})|'};
 plot_type_mod = {'plot', 'plot'};
 colors_mod = {'b', 'b'}; % Colores para cada señal
 filename_mod = 'rta_frec_s1.pdf';
-utils.plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
+plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
 
 
 % Sistema S2
@@ -45,7 +47,7 @@ ylabels_mod = {'|H(e^{j 2\pi s})|'};
 plot_type_mod = {'stem'};
 colors_mod = {'b'}; % Colores para cada señal
 filename_mod = 'rta_imp_s2.pdf';
-utils.plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
+plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
 
 %% Respuesta en frecuencia
 H_S2 = 0.5 * (1 - exp(-j * 2 * pi * s)); % Fórmula para H(e^{j2\pi s})
@@ -58,7 +60,7 @@ ylabels_mod = {'|H(e^{j 2\pi s})|', '|H(e^{j 2\pi s})|'};
 plot_type_mod = {'plot', 'plot'};
 colors_mod = {'b', 'b'}; % Colores para cada señal
 filename_mod = 'rta_frec_mod.pdf';
-utils.plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
+plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
 
 
 
@@ -74,7 +76,7 @@ ylabels_mod = {'|H(e^{j 2\pi s})|'};
 plot_type_mod = {'stem'};
 colors_mod = {'b'}; % Colores para cada señal
 filename_mod = 'rta_imp_s3.pdf';
-utils.plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
+plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
 
 %% Respuesta en frecuencia
 H_S3 = (1/4) * (1 + exp(-j * 2 * pi * s)) ./ (1 - (1/2) * exp(-j * 2 * pi * s)); % Fórmula para H(e^{j2\pi s})
@@ -87,7 +89,7 @@ ylabels_mod = {'|H(e^{j 2\pi s})|', '|H(e^{j 2\pi s})|'};
 plot_type_mod = {'plot', 'plot'};
 colors_mod = {'b', 'b'}; % Colores para cada señal
 filename_mod = 'rta_frec_mod.pdf';
-utils.plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
+plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
 
 
 % Sistema S4
@@ -102,7 +104,7 @@ ylabels_mod = {'|H(e^{j 2\pi s})|'};
 plot_type_mod = {'stem'};
 colors_mod = {'b'}; % Colores para cada señal
 filename_mod = 'rta_imp_s4.pdf';
-utils.plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
+plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
 
 %% Respuesta en frecuencia
 H_S4 = (1/4) * (1 - exp(-j * 2 * pi * s)) ./ (1 + (1/2) * exp(-j * 2 * pi * s)); % Fórmula para H(e^{j2\pi s})
@@ -115,6 +117,6 @@ ylabels_mod = {'|H(e^{j 2\pi s})|', '|H(e^{j 2\pi s})|'};
 plot_type_mod = {'plot', 'plot'};
 colors_mod = {'b', 'b'}; % Colores para cada señal
 filename_mod = 'rta_frec_mod.pdf';
-utils.plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
+plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
 
 pause;
