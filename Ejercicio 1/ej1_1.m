@@ -1,6 +1,6 @@
 clear all; close all; clc;
 
-addpath('./ej1_utils', './utils');
+
 
 % Número de alumno utilizado
 num_alumno = 03282;
@@ -39,4 +39,3 @@ filename = 'senial-ej1-TFTD-FASE.pdf';
 plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename);
 
 pause;
-

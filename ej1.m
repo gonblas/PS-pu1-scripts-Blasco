@@ -1,12 +1,30 @@
-num_dato=03282
-[n, x] = senial(num_dato); % Generar la señal
+% main.m: Script principal para ejecutar todos los archivos
+clear;
+clc;
+addpath('./Ejercicio 1');
+addpath('./Ejercicio 1/ej1_utils', './utils');
+disp('Ejecutando los scripts del Ejercicio 1');
 
-% Graficar la señal
-plot_signal(n, x, 'n', 'x[n]', ['Gráfico de la señal del dato ', num2str(num_dato)]);
+% Ejecutar los scripts de cada inciso
+disp('Ejecutando Inciso 1:');
+run('ej1_1.m');
+wait_for_figures(); % Esperar a que se cierren las figuras
 
-% Calcular la TFTD
-[s, X] = calcular_tftd(n, x);
+disp('Ejecutando Inciso 2:');
+run('ej1_2.m');
+wait_for_figures();
 
-% Graficar la TFTD en módulo y fase
-plot_signal(s, abs(X), 's', '|X(e^{j2\pi s})|', 'Módulo de la TFTD');
-plot_signal(s, angle(X), 's', 'Fase [rad]', 'Fase de la TFTD');
+disp('Ejecutando Inciso 3:');
+run('ej1_3.m');
+wait_for_figures();
+
+disp('Ejecutando Inciso 4:');
+run('ej1_4.m');
+wait_for_figures();
+
+disp('Ejecutando Inciso 5:');
+run('ej1_5.m');
+wait_for_figures();
+
+% Finalizar ejecución
+disp('Todos los scripts han sido ejecutados.');
