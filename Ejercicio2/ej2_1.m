@@ -25,4 +25,4 @@ colors = {'b'}; % Azul
 filename = 'senial-ej2.pdf';
 
 % Utilizar la función plot_signal para graficar
-plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, colors);
+plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, [5 4 1], colors);

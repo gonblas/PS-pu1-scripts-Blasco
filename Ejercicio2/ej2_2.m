@@ -18,5 +18,5 @@ filename = 'respuesta_impulsional.pdf';
 colors = {'b'}; % Color azul
 
 % Graficar utilizando plot_signal
-plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, colors);
+plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, [5 4 1], colors);
 

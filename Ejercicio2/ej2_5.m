@@ -28,7 +28,7 @@ ylabels1 = {'Amplitud', 'Amplitud'};
 plot_type1 = {'plot', 'plot'};
 filename1 = 'entrada_salida_parte1.pdf';
 colors1 = {'r', 'b'};  % Rojo para entrada, azul para y
-plot_signal(data1, 2, 1, titles1, xlabels1, ylabels1, plot_type1, filename1, colors1);
+plot_signal(data1, 2, 1, titles1, xlabels1, ylabels1, plot_type1, filename1, [3 1 1], colors1);
 
 % Segundo conjunto de gráficos: Salidas con 2 y 3 retardos
 data2 = struct('x', {1:length(y_salida_2), 1:length(y_salida_3)}, 'y', {y_salida_2, y_salida_3});
@@ -39,7 +39,7 @@ ylabels2 = {'Amplitud', 'Amplitud'};
 plot_type2 = {'plot', 'plot'};
 filename2 = 'entrada_salida_parte2.pdf';
 colors2 = {'g', 'm'};  % Verde para salida 2, magenta para salida 3
-plot_signal(data2, 2, 1, titles2, xlabels2, ylabels2, plot_type2, filename2, colors2);
+plot_signal(data2, 2, 1, titles2, xlabels2, ylabels2, plot_type2, filename2, [3 1 1], colors2);
 
 pause(0.1); % Pausa para que se alcance a graficar antes de reproducir los sonidos
 

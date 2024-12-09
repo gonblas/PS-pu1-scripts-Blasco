@@ -23,7 +23,7 @@ filename = 'entrada_vs_salida.pdf';
 colors = {'r', 'b'};  % Rojo para entrada, azul para salida
 
 % Graficar las señales de entrada y salida en una sola figura utilizando plot_signal
-plot_signal(data, 2, 1, titles, xlabels, ylabels, plot_type, filename, colors);
+plot_signal(data, 2, 1, titles, xlabels, ylabels, plot_type, filename, [3 1 1], colors);
 
 pause(0.1); % Pausa para que se alcance a graficar antes de reproducir los sonidos
 

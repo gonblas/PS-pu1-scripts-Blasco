@@ -26,7 +26,7 @@ plot_type = {'stem', 'stem'};
 colors = {'b', 'r'}; % Azul y rojo
 filename = 'rta_imp_num_1.pdf';
 
-plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, colors);
+plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, [1 1 1], colors);
 
 data = struct('x', {n, n}, 'y', {h_S3, h_S4});
 titles = {'Respuesta Impulsional S3', 'Respuesta Impulsional S4'};
@@ -37,12 +37,12 @@ colors = {'g', 'm'}; % Verde y magenta
 filename = 'rta_imp_num_2.pdf';
 
 % Llamada para graficar respuestas impulsionales
-plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, colors);
+plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, [1 1 1], colors);
 
 % Configuración de gráficos para respuestas en frecuencia
 H_all = {H_S1, H_S2, H_S3, H_S4};
 systems = {'S1', 'S2', 'S3', 'S4'};
-colors = {'b', 'r', 'g', 'm'};
+colors_list = {'b', 'r', 'g', 'm'};
 
 for i = 1:4
     % Configuración para módulo y fase
@@ -51,11 +51,11 @@ for i = 1:4
     titles = {['Respuesta en Frecuencia ', systems{i}, ' - Módulo'], ...
                     ['Respuesta en Frecuencia ', systems{i}, ' - Fase']};
     xlabels = {'s', 's'};
-    ylabels = {'|H(e^{j 2\pi s})|', 'angle(H(e^{j 2\pi s}))'};
+    ylabels = {'|H(e^{j 2\pi s})|', '\angle(H(e^{j 2\pi s}))'};
     plot_type = {'plot', 'plot'};
-    colors = {colors{i}, colors{i}};
-    filename = ['rta_frec_num', systems{i}, '.pdf'];
+    colors = {colors_list{i}, colors_list{i}};
+    filename = ['rta_frec_num', num2str(i), '.pdf'];
 
     % Llamada para graficar módulo y fase
-    plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, colors);
+    plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, [1 1 1], colors);
 end

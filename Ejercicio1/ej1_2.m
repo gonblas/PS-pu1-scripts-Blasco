@@ -18,7 +18,7 @@ ylabels = {'|H(e^{j 2\pi s})|'};
 plot_type = {'stem'};
 colors = {'b'}; % Colores para cada señal
 filename = 'rta_imp_s1.pdf';
-plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, colors);
+plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, [5 4 1], colors);
 
 %% Respuesta en frecuencia
 H_S1 = 0.5 * (1 + exp(-j * 2 * pi * s)); % Fórmula para H(e^{j2\pi s})
@@ -31,7 +31,7 @@ ylabels = {'|H(e^{j 2\pi s})|', '|H(e^{j 2\pi s})|'};
 plot_type = {'plot', 'plot'};
 colors = {'b', 'b'}; % Colores para cada señal
 filename = 'rta_frec_s1.pdf';
-plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, colors);
+plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, [1 1 1], colors);
 
 
 % Sistema S2
@@ -46,7 +46,7 @@ ylabels = {'|H(e^{j 2\pi s})|'};
 plot_type = {'stem'};
 colors = {'b'}; % Colores para cada señal
 filename = 'rta_imp_s2.pdf';
-plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, colors);
+plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, [5 4 1], colors);
 
 %% Respuesta en frecuencia
 H_S2 = 0.5 * (1 - exp(-j * 2 * pi * s)); % Fórmula para H(e^{j2\pi s})
@@ -59,7 +59,7 @@ ylabels = {'|H(e^{j 2\pi s})|', '|H(e^{j 2\pi s})|'};
 plot_type = {'plot', 'plot'};
 colors = {'b', 'b'}; % Colores para cada señal
 filename = 'rta_frec.pdf';
-plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, colors);
+plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, [1 1 1], colors);
 
 
 
@@ -75,7 +75,7 @@ ylabels = {'|H(e^{j 2\pi s})|'};
 plot_type = {'stem'};
 colors = {'b'}; % Colores para cada señal
 filename = 'rta_imp_s3.pdf';
-plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, colors);
+plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, [5 4 1], colors);
 
 %% Respuesta en frecuencia
 H_S3 = (1/4) * (1 + exp(-j * 2 * pi * s)) ./ (1 - (1/2) * exp(-j * 2 * pi * s)); % Fórmula para H(e^{j2\pi s})
@@ -88,7 +88,7 @@ ylabels = {'|H(e^{j 2\pi s})|', '|H(e^{j 2\pi s})|'};
 plot_type = {'plot', 'plot'};
 colors = {'b', 'b'}; % Colores para cada señal
 filename = 'rta_frec.pdf';
-plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, colors);
+plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, [1 1 1], colors);
 
 
 % Sistema S4
@@ -103,7 +103,7 @@ ylabels = {'|H(e^{j 2\pi s})|'};
 plot_type = {'stem'};
 colors = {'b'}; % Colores para cada señal
 filename = 'rta_imp_s4.pdf';
-plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, colors);
+plot_signal(data, 1, 1, titles, xlabels, ylabels, plot_type, filename, [5 4 1], colors);
 
 %% Respuesta en frecuencia
 H_S4 = (1/4) * (1 - exp(-j * 2 * pi * s)) ./ (1 + (1/2) * exp(-j * 2 * pi * s)); % Fórmula para H(e^{j2\pi s})
@@ -116,5 +116,5 @@ ylabels = {'|H(e^{j 2\pi s})|', '|H(e^{j 2\pi s})|'};
 plot_type = {'plot', 'plot'};
 colors = {'b', 'b'}; % Colores para cada señal
 filename = 'rta_frec.pdf';
-plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, colors);
+plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_type, filename, [1 1 1], colors);
 

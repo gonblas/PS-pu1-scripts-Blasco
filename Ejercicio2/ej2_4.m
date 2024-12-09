@@ -44,7 +44,7 @@ filename_entrada = 'salida_1retardo.pdf';
 colors_entrada = {'b'};  % Azul
 
 % Graficar la señal de salida para el filtro de 1 retardo
-plot_signal(data_entrada, 1, 1, titles_entrada, xlabels_entrada, ylabels_entrada, plot_type_entrada, filename_entrada, colors_entrada);
+plot_signal(data_entrada, 1, 1, titles_entrada, xlabels_entrada, ylabels_entrada, plot_type_entrada, filename_entrada, [5 4 1], colors_entrada);
 
 
 % Estructura para el segundo gráfico (Filtro con 2 retardos)
@@ -57,19 +57,19 @@ filename_entrada = 'salida_2retardos.pdf';
 colors_entrada = {'b'};  % Azul
 
 % Graficar la señal de salida para el filtro de 2 retardos
-plot_signal(data_entrada, 1, 1, titles_entrada, xlabels_entrada, ylabels_entrada, plot_type_entrada, filename_entrada, colors_entrada);
+plot_signal(data_entrada, 1, 1, titles_entrada, xlabels_entrada, ylabels_entrada, plot_type_entrada, filename_entrada, [5 4 1], colors_entrada);
 
 % Estructura para el tercer gráfico (Filtro con 3 retardos)
-data_salida_3 = struct('x', {1:length(y3)}, 'y', {y3});
-titles_salida_3 = {'Señal de Salida (3 retardos)'};
-xlabels_salida_3 = {'n'};
-ylabels_salida_3 = {'y[n]'};
-plot_type_salida_3 = {'stem'};
-filename_salida_3 = 'salida_3retardos.pdf';
-colors_salida_3 = {'b'};  % Azul
+data_salida = struct('x', {1:length(y3)}, 'y', {y3});
+titles_salida = {'Señal de Salida (3 retardos)'};
+xlabels_salida = {'n'};
+ylabels_salida = {'y[n]'};
+plot_type_salida = {'stem'};
+filename_salida = 'salidaretardos.pdf';
+colors_salida = {'b'};  % Azul
 
 % Graficar la señal de salida para el filtro de 3 retardos
-plot_signal(data_salida_3, 1, 1, titles_salida_3, xlabels_salida_3, ylabels_salida_3, plot_type_salida_3, filename_salida_3, colors_salida_3);
+plot_signal(data_salida, 1, 1, titles_salida, xlabels_salida, ylabels_salida, plot_type_salida, filename_salida, [5 4 1], colors_salida);
 
 
 

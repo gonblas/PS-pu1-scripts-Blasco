@@ -3,7 +3,7 @@ addpath('./ej1_utils', '../utils');
 
 % Señal de entrada: Señal del ejercicio 1
 num_alumno = 03282;
-[n, x] = senial(03282);
+[n, x] = senial(num_alumno);
 
 % Salidas
 y_S1 = y_S1(x);
@@ -22,7 +22,7 @@ colors = {'b', 'r'}; % Azul y Rojo
 filename = 'rta_sistemas_ej1p1.pdf';
 
 % Llamada para graficar S1 y S2
-plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_types, filename, colors);
+plot_signal(data, 2, 1, titles, xlabels, ylabels, plot_types, filename, [3 1 1], colors);
 
 % Configuración para el segundo gráfico (S3 y S4)
 data = struct('x', {n, n}, 'y', {y_S3, y_S4});
@@ -35,4 +35,4 @@ colors = {'g', 'm'}; % Verde y Magenta
 filename = 'rta_sistemas_ej1p2.pdf';
 
 % Llamada para graficar S3 y S4
-plot_signal(data, 1, 2, titles, xlabels, ylabels, plot_types, filename, colors);
+plot_signal(data, 2, 1, titles, xlabels, ylabels, plot_types, filename, [3 1 1], colors);

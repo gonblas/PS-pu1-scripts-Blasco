@@ -1,4 +1,4 @@
-function plot_signal(data, nrows, ncols, titles, xlabels, ylabels, plot_type, filename, colors)
+function plot_signal(data, nrows, ncols, titles, xlabels, ylabels, plot_type, filename, aspect_ratio, colors)
     % plot_signal: Función para graficar señales con opciones de subplot y tipos de gráfico
     % Parámetros:
     % - data: struct con campos 'x' (datos del eje x) y 'y' (datos del eje y).
@@ -7,9 +7,15 @@ function plot_signal(data, nrows, ncols, titles, xlabels, ylabels, plot_type, fi
     % - plot_type: Celda indicando el tipo de gráfico ('plot', 'stem', etc.) para cada subplot.
     % - filename: Nombre del archivo PDF a guardar.
     % - colors (opcional): Celdas con los colores para cada gráfico.
+    % - aspect_ratio (opcional): Vector [ancho alto 1] para personalizar la relación de aspecto.
+
+    % Verificar aspect_ratio
+    if nargin < 9 || isempty(aspect_ratio)
+        aspect_ratio = [1 1 1]; % Relación de aspecto predeterminada (cuadrada)
+    end
 
     % Verificar colores
-    if nargin < 9 || isempty(colors)
+    if nargin < 10 || isempty(colors)
         colors = repmat({'b'}, 1, numel(data)); % Color predeterminado: azul
     end
 
@@ -34,13 +40,14 @@ function plot_signal(data, nrows, ncols, titles, xlabels, ylabels, plot_type, fi
         switch plot_type{i}
             case 'plot'
                 plot(data(i).x, data(i).y, 'Color', colors{i}, 'LineWidth', 2);
-                pbaspect([4 4 1]); % Relación de aspecto personalizada (ancho, alto, 1)
             case 'stem'
                 stem(data(i).x, data(i).y, 'filled', 'Color', colors{i}, 'MarkerFaceColor', colors{i}, 'LineWidth', 2);
-                pbaspect([5 1 1]); % Relación de aspecto personalizada (ancho, alto, 1)
             otherwise
                 error('Tipo de gráfico no soportado: %s', plot_type{i});
         end
+        
+        % Aplicar relación de aspecto personalizada
+        pbaspect(aspect_ratio);
         
         % Añadir etiquetas y título
         title(titles{i});
@@ -50,7 +57,7 @@ function plot_signal(data, nrows, ncols, titles, xlabels, ylabels, plot_type, fi
     end
 
     % Guardar figura como PDF
-    % if ~isempty(filename)
-    %     print(gcf, '-dpdf', filename, '-painters');
-    % end
+    if ~isempty(filename)
+        print(gcf, filename, '-dpdfcrop','-bestfit');
+    end
 end
