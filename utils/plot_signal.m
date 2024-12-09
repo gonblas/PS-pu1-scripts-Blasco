@@ -1,4 +1,3 @@
-
 function plot_signal(data, nrows, ncols, titles, xlabels, ylabels, plot_type, filename, colors)
     % plot_signal: Función para graficar señales con opciones de subplot y tipos de gráfico
     % Parámetros:
@@ -22,9 +21,9 @@ function plot_signal(data, nrows, ncols, titles, xlabels, ylabels, plot_type, fi
 
     % Crear figura
     figure;
-    set(gcf, 'Position', [100, 100, 800, 600]); % Ajustar tamaño de la figura
-    set(gcf, 'PaperPosition', [0 0 8 6]); % Ajusta la posición y el tamaño de la figura (en pulgadas)
-    set(gcf, 'PaperSize', [8 6]); % Establece el tamaño del papel (en pulgadas)
+    set(gcf, 'Position', [100, 100, 800, 600]); % Tamaño de la figura en pantalla
+    set(gcf, 'PaperPosition', [0 0 8 6]); % Tamaño y proporción del papel (en pulgadas)
+    set(gcf, 'PaperSize', [8 6]); % Establecer el tamaño del papel para el PDF
 
     % Graficar cada subplot
     for i = 1:numel(data)
@@ -35,8 +34,10 @@ function plot_signal(data, nrows, ncols, titles, xlabels, ylabels, plot_type, fi
         switch plot_type{i}
             case 'plot'
                 plot(data(i).x, data(i).y, 'Color', colors{i}, 'LineWidth', 2);
+                pbaspect([4 4 1]); % Relación de aspecto personalizada (ancho, alto, 1)
             case 'stem'
-                stem(data(i).x, data(i).y, 'filled', 'Color', colors{i}, 'MarkerFaceColor', colors{i}, 'LineWidth', 2)
+                stem(data(i).x, data(i).y, 'filled', 'Color', colors{i}, 'MarkerFaceColor', colors{i}, 'LineWidth', 2);
+                pbaspect([5 1 1]); % Relación de aspecto personalizada (ancho, alto, 1)
             otherwise
                 error('Tipo de gráfico no soportado: %s', plot_type{i});
         end
