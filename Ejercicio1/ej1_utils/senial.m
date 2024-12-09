@@ -1,20 +1,20 @@
 function [n, x] = senial(numal);
 % AnSyS
-% Año 2023
-% Práctica con utilitario 1
+% Anio 2023
+% Practica con utilitario 1
 % 
 % [n, x] = senial(numal)
-% Esta función retorna la señal del Ejercicio 1, y los instantes a los que
+% Esta funcion retorna la senial del Ejercicio 1, y los instantes a los que
 % corresponde.
 % 
 % Variables de entrada:
-% numAl: Introduzca en este campo su número de alumno (sin barra).
-% En caso de realizar el trabajo de a dos ingrese uno de los números.
+% numAl: Introduzca en este campo su numero de alumno (sin barra).
+% En caso de realizar el trabajo de a dos ingrese uno de los numeros.
 % de alumno.
 % 
 % Variables de salida:
-% n: Instantes n a los que corresponde la señal.
-% x: Señal
+% n: Instantes n a los que corresponde la senial.
+% x: Senial
 
 n = [0:100];
 

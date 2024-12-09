@@ -1,7 +1,7 @@
 function [n, h] = hcanald(numal);
 % AnSyS
-% AÒo 2023
-% Pr·ctica con utilitario 1 - Ejercicio 2
+% Anio 2023
+% Practica con utilitario 1 - Ejercicio 2
 % 
 % [n, h] = hcanald(numal)
 % Esta funci√≥n retorna la respuesta impulsional del canal discreto

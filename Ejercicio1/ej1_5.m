@@ -1,13 +1,9 @@
-clear all; close all; clc;
-
-addpath('./ej1_utils', './utils');
-
-ds = 0.001;            % Paso entre frecuencias
-s = -0.5:ds:0.5;       % Rango de frecuencias de -1/2 a 1/2
+clear all; close all;
+addpath('./ej1_utils', '../utils');
 
 % Señal de entrada: Señal del ejercicio 1
 num_alumno = 03282;
-[n, x] = senial(num_alumno);
+[n, x] = senial(03282);
 
 % Salidas
 y_S1 = y_S1(x);
@@ -60,4 +56,3 @@ colors_S4 = {'m', 'm'}; % Magenta
 filename_S4 = 'TFTD_sistemas_S4.pdf';
 plot_signal(data_S4, 1, 2, titles_S4, xlabels_S4, ylabels_S4, plot_type_S4, filename_S4, colors_S4);
 
-pause;

@@ -1,10 +1,9 @@
-clear all;close all; clc;
-
-addpath('./ej1_utils', './utils');
+clear all; close all;
+addpath('./ej1_utils', '../utils');
 
 % Señal de entrada: Señal del ejercicio 1
 num_alumno = 03282;
-[n, x] = senial(num_alumno);
+[n, x] = senial(03282);
 
 % Salidas
 y_S1 = y_S1(x);
@@ -55,4 +54,4 @@ color_S4 = {'m'}; % Magenta
 plot_signal(data_S4, 1, 1, title_S4, xlabel_S4, ylabel_S4, plot_type_S4, filename_S4, color_S4);
 
 
-pause;
+

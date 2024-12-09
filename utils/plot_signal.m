@@ -23,6 +23,8 @@ function plot_signal(data, nrows, ncols, titles, xlabels, ylabels, plot_type, fi
     % Crear figura
     figure;
     set(gcf, 'Position', [100, 100, 800, 600]); % Ajustar tamaño de la figura
+    set(gcf, 'PaperPosition', [0 0 8 6]); % Ajusta la posición y el tamaño de la figura (en pulgadas)
+    set(gcf, 'PaperSize', [8 6]); % Establece el tamaño del papel (en pulgadas)
 
     % Graficar cada subplot
     for i = 1:numel(data)

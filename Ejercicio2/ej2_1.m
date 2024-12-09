@@ -1,6 +1,5 @@
-clear all; close all; clc;
-
-addpath('./ej2_utils', './utils');
+clear all; close all;
+addpath('./ej2_utils', '../utils');
 
 % Número de alumno
 num_alumno = 03282;
@@ -10,7 +9,7 @@ num_alumno = 03282;
 
 % Mostrar la respuesta impulsional
 indices_no_cero = find(h ~= 0);
-disp('Respuesta impulsional h[n]:');
+disp('Respuesta impulsional h[n] del canal:');
 for i = 1:length(indices_no_cero)
     idx = indices_no_cero(i);  % Índice de un elemento no cero
     fprintf('h[%d] = %f\n', n(idx), h(idx));

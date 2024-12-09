@@ -1,6 +1,5 @@
-clear all; close all; clc;
-
-addpath('./ej1_utils', './utils');
+clear all; close all;
+addpath('./ej1_utils', '../utils');
 
 % Señal de entrada: impulso unitario
 x = [1, zeros(1, 19)]; % Impulso unitario de longitud 20
@@ -63,4 +62,3 @@ filename_fase = 'rta_frec_fase.pdf';
 
 % Llamada para graficar fase de las respuestas en frecuencia
 plot_signal(data_fase, 2, 2, titles_fase, xlabels_fase, ylabels_fase, plot_type_fase, filename_fase, colors_fase);
-pause;

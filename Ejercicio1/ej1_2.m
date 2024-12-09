@@ -1,6 +1,5 @@
-clear all;close all; clc;
-
-addpath('./ej1_utils', './utils');
+clear all; close all;
+addpath('./ej1_utils', '../utils');
 
 % General
 s = linspace(-0.4999, 0.4999, 512);
@@ -10,7 +9,7 @@ u = @(n) (n >= 0); % Definición de la función escalón unitario
 
 % Sistema S1
 %% Respuesta impulsional
-h_S1 = 0.5*(delta(N, 0) + delta(N, 1))
+h_S1 = 0.5*(delta(N, 0) + delta(N, 1));
 data_mod = struct('x', {n}, ...
                   'y', {h_S1});
 titles_mod = {'Respuesta en Impulsional S1'};
@@ -19,7 +18,7 @@ ylabels_mod = {'|H(e^{j 2\pi s})|'};
 plot_type_mod = {'stem'};
 colors_mod = {'b'}; % Colores para cada señal
 filename_mod = 'rta_imp_s1.pdf';
-plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
+plot_signal(data_mod, 1, 1, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
 
 %% Respuesta en frecuencia
 H_S1 = 0.5 * (1 + exp(-j * 2 * pi * s)); % Fórmula para H(e^{j2\pi s})
@@ -47,7 +46,7 @@ ylabels_mod = {'|H(e^{j 2\pi s})|'};
 plot_type_mod = {'stem'};
 colors_mod = {'b'}; % Colores para cada señal
 filename_mod = 'rta_imp_s2.pdf';
-plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
+plot_signal(data_mod, 1, 1, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
 
 %% Respuesta en frecuencia
 H_S2 = 0.5 * (1 - exp(-j * 2 * pi * s)); % Fórmula para H(e^{j2\pi s})
@@ -76,7 +75,7 @@ ylabels_mod = {'|H(e^{j 2\pi s})|'};
 plot_type_mod = {'stem'};
 colors_mod = {'b'}; % Colores para cada señal
 filename_mod = 'rta_imp_s3.pdf';
-plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
+plot_signal(data_mod, 1, 1, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
 
 %% Respuesta en frecuencia
 H_S3 = (1/4) * (1 + exp(-j * 2 * pi * s)) ./ (1 - (1/2) * exp(-j * 2 * pi * s)); % Fórmula para H(e^{j2\pi s})
@@ -104,7 +103,7 @@ ylabels_mod = {'|H(e^{j 2\pi s})|'};
 plot_type_mod = {'stem'};
 colors_mod = {'b'}; % Colores para cada señal
 filename_mod = 'rta_imp_s4.pdf';
-plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
+plot_signal(data_mod, 1, 1, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
 
 %% Respuesta en frecuencia
 H_S4 = (1/4) * (1 - exp(-j * 2 * pi * s)) ./ (1 + (1/2) * exp(-j * 2 * pi * s)); % Fórmula para H(e^{j2\pi s})
@@ -119,4 +118,3 @@ colors_mod = {'b', 'b'}; % Colores para cada señal
 filename_mod = 'rta_frec_mod.pdf';
 plot_signal(data_mod, 1, 2, titles_mod, xlabels_mod, ylabels_mod, plot_type_mod, filename_mod, colors_mod);
 
-pause;

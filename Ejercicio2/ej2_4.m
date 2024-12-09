@@ -1,17 +1,38 @@
-clear all; close all; clc;
-
-addpath('./ej2_utils', './utils');
+clear all; close all;
+addpath('./ej2_utils', '../utils');
 
 x = respuesta_impulsional();
 
 % Aplicar el filtro compensador con 1 retardo
 y1 = filtro_una_rama(x);
 
+indices_no_cero = find(y1 ~= 0);
+fprintf('\nRespuesta impulsional h[n] 1 rama de retardo:\n');
+for i = 1:length(indices_no_cero)
+    idx = indices_no_cero(i);  % Índice de un elemento no cero
+    fprintf('h[%d] = %f\n', idx, y1(idx));
+end
+
 % Aplicar el filtro compensador con 2 retardos
 y2 = filtro_dos_ramas(x);
 
+indices_no_cero = find(y2 ~= 0);
+fprintf('\nRespuesta impulsional h[n] 2 ramas de retardo:\n');
+for i = 1:length(indices_no_cero)
+    idx = indices_no_cero(i);  % Índice de un elemento no cero
+    fprintf('h[%d] = %f\n', idx, y2(idx));
+end
+
 % Aplicar el filtro compensador con 3 retardos
 y3 = filtro_tres_ramas(x);
+
+indices_no_cero = find(y3 ~= 0);
+fprintf('\nRespuesta impulsional h[n] 3 ramas de retardo:\n');
+for i = 1:length(indices_no_cero)
+  idx = indices_no_cero(i);  % Índice de un elemento no cero
+  fprintf('h[%d] = %f\n', idx, y3(idx));
+end
+
 
 % Estructura para el primer gráfico (Filtro con 1 retardo)
 data_entrada = struct('x', {1:length(y1)}, 'y', {y1});
@@ -50,5 +71,5 @@ colors_salida_3 = {'b'};  % Azul
 % Graficar la señal de salida para el filtro de 3 retardos
 plot_signal(data_salida_3, 1, 1, titles_salida_3, xlabels_salida_3, ylabels_salida_3, plot_type_salida_3, filename_salida_3, colors_salida_3);
 
-pause;
+
 
