@@ -6,7 +6,10 @@ x = respuesta_impulsional();
 % Aplicar el filtro compensador con 1 retardo
 y1 = filtro_una_rama(x);
 
-indices_no_cero = find(y1 ~= 0);
+umbral = 1e-10;  % Umbral para valores cercanos a cero
+
+% Buscar índices donde el valor no es aproximadamente cero
+indices_no_cero = find(abs(y1) > umbral);
 fprintf('\nRespuesta impulsional h[n] 1 rama de retardo:\n');
 for i = 1:length(indices_no_cero)
     idx = indices_no_cero(i);  % Índice de un elemento no cero
@@ -16,7 +19,8 @@ end
 % Aplicar el filtro compensador con 2 retardos
 y2 = filtro_dos_ramas(x);
 
-indices_no_cero = find(y2 ~= 0);
+% Buscar índices donde el valor no es aproximadamente cero
+indices_no_cero = find(abs(y2) > umbral);
 fprintf('\nRespuesta impulsional h[n] 2 ramas de retardo:\n');
 for i = 1:length(indices_no_cero)
     idx = indices_no_cero(i);  % Índice de un elemento no cero
@@ -26,12 +30,14 @@ end
 % Aplicar el filtro compensador con 3 retardos
 y3 = filtro_tres_ramas(x);
 
-indices_no_cero = find(y3 ~= 0);
+% Buscar índices donde el valor no es aproximadamente cero
+indices_no_cero = find(abs(y3) > umbral);
 fprintf('\nRespuesta impulsional h[n] 3 ramas de retardo:\n');
 for i = 1:length(indices_no_cero)
-  idx = indices_no_cero(i);  % Índice de un elemento no cero
-  fprintf('h[%d] = %f\n', idx, y3(idx));
+    idx = indices_no_cero(i);  % Índice de un elemento no cero
+    fprintf('h[%d] = %f\n', idx, y3(idx));
 end
+
 
 
 % Estructura para el primer gráfico (Filtro con 1 retardo)
